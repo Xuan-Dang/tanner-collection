@@ -1,0 +1,179 @@
+.footer {
+  margin-top: _vw(420);
+  padding-top: _vw(110);
+  padding-bottom: _vw(0);
+  background-color: map-get($color, 12);
+  @include media(768px) {
+    padding: _rem(16);
+  }
+  &__top {
+    padding-right: _vw(188);
+    padding-left: _vw(173);
+    @include media(768px) {
+      padding: 0;
+    }
+    .nav {
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      @include media(480px) {
+        flex-direction: column;
+        align-items: start;
+      }
+      &__brand {
+        width: _vw(308);
+        transform: translateY(_vw(-30));
+        @include media(768px) {
+          transform: unset;
+        }
+        @include media(480px) {
+          width: 50%;
+         align-self: center;
+        }
+      }
+      &__list {
+        transform: translateX(_vw(50)) translateY(_vw(5));
+        @include media(480px) {
+          transform: unset;
+          margin: _rem(16) 0;
+        }
+      }
+      &__item {
+        margin-right: _vw(80);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      &__link {
+        padding: 0 _vw(calc(70 / 2));
+        color: map-get($color, 13);
+        font-weight: 700;
+        text-transform: uppercase;
+        @include _clamp(font-size, 8, 30, 30);
+        &::after {
+          right: _vw(50);
+        }
+        &:hover {
+          color: map-get($color, 4);
+        }
+      }
+    }
+  }
+  &__address {
+    width: _vw(340);
+    line-height: _vw(40);
+    @include _clamp(font-size, 8, 30, 30);
+    letter-spacing: _vw(-0.6);
+    transform: translate(_vw(-80), 0);
+    font-weight: 300;
+    b {
+      font-weight: 500;
+    }
+    @include media(768px) {
+      line-height: 1.25;
+      transform: unset;
+    }
+    @include media(488px) {
+      width: 100%;
+      margin-bottom: _rem(16);
+    }
+  }
+  &__email {
+    width: _vw(600);
+    margin-top: _vw(40);
+    transform: translate(_vw(100), _vw(-35));
+    line-height: _vw(30);
+    @include media(768px) {
+      line-height: 1.25;
+    }
+    @include media(480px) {
+      width: 100%;
+      transform: unset;
+    }
+    h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: _vw(40);
+      @include _clamp(font-size, 8, 30, 30);
+    }
+    p {
+      @include _clamp(font-size, 8, 24, 30);
+      margin-bottom: _vw(35);
+    }
+    .form-group {
+      display: flex;
+      align-items: center;
+      input {
+        width: _vw(380);
+        height: _vw(66);
+        outline: 0;
+        border: _rem(1) solid map-get($color, 17);
+        margin-right: _vw(15);
+        @include media(768px) {
+          height: _rem(16);
+        }
+        @include media(480px) {
+          width: 100%;
+        }
+      }
+      .btn {
+        width: _vw(100);
+        height: _vw(68);
+        background-color: map-get($color, 18);
+        @include media(768px) {
+          height: _rem(16);
+        }
+      }
+    }
+  }
+  &__bottom {
+    transform: translateY(_vw(-30));
+    @include media(768px) {
+      transform: unset;
+      margin-top: _rem(16);
+    }
+    .wrapper {
+      display: flex;
+      padding: 0 _vw(174);
+      align-items: center;
+      padding-bottom: _vw(10);
+      @include media(768px) {
+        padding: 0;
+      }
+      @include media(480px) {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+    .copyrigh-text {
+      margin-right: _vw(260);
+      text-transform: uppercase;
+      font-weight: 300;
+      @include _clamp(font-size, 8, 27, 30);
+      @include media(480px) {
+        margin-right: 0;
+        margin-bottom: _rem(16);
+      }
+    }
+    .nav {
+      &__item {
+        margin-right: _vw(160);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      &__link {
+        padding: _vw(10);
+        font-weight: 300;
+        text-transform: lowercase;
+        @include _clamp(font-size, 8, 28, 30);
+        &::after {
+          right: _vw(-25);
+        }
+        &::before {
+          left: _vw(-85);
+        }
+      }
+    }
+  }
+}

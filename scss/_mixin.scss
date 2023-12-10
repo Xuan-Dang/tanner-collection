@@ -1,0 +1,22 @@
+@mixin media($breakpoint) {
+  @media (width <= $breakpoint) {
+    @content;
+  }
+}
+@function _rem($value) {
+  $rem: calc($value / $mainFontSize) + rem;
+  @return $rem;
+}
+@function _vw($value) {
+  $vw: calc(calc($value/$viewPointWidth) * 100) + vw;
+  @return $vw;
+}
+@mixin toRem($property, $value) {
+  #{$property}: _rem($value);
+}
+@mixin toVw($property, $value) {
+  #{$property}: _vw($value);
+}
+@mixin _clamp($property, $min, $normal, $max) {
+  #{$property}: clamp(_rem($min), _vw($normal), _rem($max));
+}

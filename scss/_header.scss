@@ -1,0 +1,108 @@
+.header {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  z-index: 99;
+  &.active {
+    background-color: map-get($color, 6);
+  }
+  @include media(1024px) {
+    position: static;
+    background-color: map-get($color, 6);
+    margin-bottom: _rem(16);
+  }
+  &__nav {
+    &.nav {
+      .btn {
+        display: none;
+      }
+      @include media(992px) {
+        width: 100%;
+        justify-content: center;
+        position: relative;
+        .btn {
+          position: absolute;
+          right: _rem(16);
+          padding: _rem(12);
+          top: 50%;
+          display: flex;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .nav {
+      &__brand {
+        @include _clamp(width, 100, 435, 600);
+        margin: 0 _vw(24);
+        @include media(992px) {
+          margin: 0;
+        }
+      }
+      &__list {
+        margin-left: _vw(calc(274 - calc(22 + calc(169 / 2))));
+        transform: translateY(_vw(-10));
+        &__fixed-header {
+          display: none;
+          @include media(992px) {
+            display: flex;
+            align-items: center;
+            padding: _rem(20);
+          }
+          .btn {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: transparent;
+            position: static;
+            padding: _rem(10);
+            margin-top: auto;
+            transform: unset;
+          }
+        }
+        @include media(992px) {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          margin-left: 0;
+          background-color: map-get($color, 6);
+          flex-direction: column;
+          align-items: flex-start;
+          box-shadow: map-get($shadow, small);
+          z-index: 99;
+          transition: width 0.4s;
+          transform: unset;
+          &.active {
+            width: _rem(225);
+          }
+        }
+      }
+      &__item {
+        margin-right: _vw(5);
+        &:last-child {
+          margin-right: 0;
+        }
+        @include media(992px) {
+          width: 100%;
+          margin-right: 0
+        }
+      }
+      &__link {
+        @include toVw(padding, calc(170 / 2));
+        @include _clamp(font-size, 14, 30, 30);
+        line-height: _vw(60);
+        text-transform: uppercase;
+        font-weight: 700;
+        color: map-get($color, 1);
+        @include media(992px) {
+          width: 100%;
+          &::after,
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

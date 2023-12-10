@@ -1,0 +1,181 @@
+.story {
+  &__box {
+    display: flex;
+    position: relative;
+    &.first {
+      margin: _vw(393) 0;
+      .story {
+        &__content {
+          top: _vw(213);
+          right: _vw(310);
+          display: flex;
+          justify-content: end;
+          padding: _vw(110) _vw(190) _vw(46) 0;
+          width: _vw(1780);
+          @include media(768px) {
+            right: _rem(15);
+            padding-right: _rem(14);
+          }
+          @include media(680px) {
+            right: _rem(5);
+          }
+          &::after {
+            right: _vw(305);
+            background-color: map-get($color, 6);
+          }
+        }
+        &__title {
+          right: _vw(951);
+          top: _vw(205);
+          width: _vw(1426);
+          @include media(768px) {
+            right: _rem(250);
+          }
+          h2 {
+            margin-bottom: _vw(35);
+          }
+        }
+        &__description {
+          width: _vw(660);
+          @include media(768px) {
+            width: _rem(180);
+          }
+        }
+      }
+    }
+    &.second {
+      justify-content: end;
+      padding: _vw(363) 0;
+      background-color: map-get($color, 12);
+      .story {
+        &__content {
+          left: _vw(310);
+          top: _vw(598);
+          padding: _vw(55) _vw(129) _vw(95);
+          width: _vw(1810);
+          @include media(768px) {
+            width: 50%;
+            left: _rem(15);
+            padding-left: _rem(10);
+          }
+          @include media(680px) {
+            left: _rem(5)
+          }
+          &::after {
+            background-color: map-get($color, 12);
+            left: _vw(310);
+          }
+          &::before {
+            content: "";
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: transparent;
+            background-image: url("../image/navy_salt_4.png");
+            background-repeat: no-repeat;
+            width: _vw(638);
+            background-size: contain;
+            top: _vw(-50);
+            left: _vw(55);
+          }
+        }
+        &__title {
+          left: _vw(1085);
+          top: _vw(180);
+          width: _vw(1500);
+          @include media(768px) {
+            left: _rem(250);
+          }
+          h2 {
+            margin-bottom: _vw(30);
+          }
+          p {
+            text-align: start;
+            padding-left: _vw(230);
+            @include media(598px) {
+                padding-left: 0;
+                text-align: end;
+            }
+          }
+        }
+        &__description {
+          width: _vw(800);
+          @include media(768px) {
+            width: _rem(180);
+          }
+        }
+      }
+    }
+  }
+  &__image {
+    width: _vw(2560);
+    @include media(598px) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    position: absolute;
+    @include _clamp(border-width, 2, 6, 6);
+    border-color: map-get($color, 2);
+    border-style: solid;
+    @include media(598px) {
+      flex-direction: column;
+      align-items: center;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 80% !important;
+      padding: _rem(14)!important;
+    }
+    &::after {
+      content: "";
+      background-image: url("../image/forma_kona_3.png");
+      position: absolute;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: _vw(389);
+      height: _vw(156);
+      bottom: _vw(-154);
+      @include media(598px) {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    color: map-get($color, 6);
+    position: absolute;
+    @include media(598px) {
+      position: static;
+      width: 100% !important;
+      margin-bottom: _rem(7);
+    }
+    h2 {
+      @include _clamp(font-size, 14, 97, 97);
+      font-weight: 700;
+      letter-spacing: _vw(25);
+      @include media(598px) {
+        text-align: center!important;
+      }
+    }
+    p {
+      @include _clamp(font-size, 10, 43, 43);
+      text-align: end;
+    }
+  }
+  &__description {
+    color: map-get($color, 7);
+    @include _clamp(font-size, 8, 29, 29);
+    line-height: _vw(80);
+    letter-spacing: _vw(0.5);
+    @include media(598px) {
+      width: 100% !important;
+      color: map-get($color, 6) !important;
+      line-height: 1.2!important;
+    }
+  }
+}

@@ -1,0 +1,159 @@
+.home-slider {
+  .slide-item {
+    &__description {
+      position: absolute;
+      top: 52%;
+      transform: translateY(-50%);
+      left: _vw(700);
+      p {
+        @include _clamp(font-size, 8, 43, 43);
+        line-height: _vw(65);
+      }
+      h2 {
+        @include _clamp(font-size, 12, 97, 97);
+        font-weight: 900;
+        letter-spacing: _vw(22.5);
+        text-transform: uppercase;
+        line-height: _vw(165);
+      }
+      a {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: _vw(-130);
+        @include _clamp(font-size, 10, 43, 43);
+        font-weight: 500;
+        padding-left: _vw(201);
+        text-decoration: none;
+        color: map-get($color, 2);
+        span {
+          margin-right: _vw(35);
+        }
+        &::before {
+          content: "";
+          display: block;
+          width: _vw(77);
+          @include _clamp(height, 1, 3, 3);
+          margin-right: _vw(31);
+          background-color: map-get($color, 2);
+        }
+      }
+    }
+    &__image-wrapper {
+      @include toVw(width, 2479);
+      margin-left: auto;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .splide__arrows {
+    position: absolute;
+    top: _vw(355);
+    left: _vw(203);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include media(1500) {
+        left: _vw(500);
+    }
+    @include media(1024px) {
+      position: static;
+    }
+    &::after {
+      content: "";
+      display: block;
+      @include _clamp(width, 1, 3, 3);
+      height: _vw(77);
+      background-color: map-get($color, 2);
+      @include media(1024px) {
+        display: none;
+      }
+    }
+    .splide__arrow {
+      position: static;
+      transform: unset;
+      background-color: unset;
+      font-size: _vw(90);
+      width: unset;
+      height: unset;
+      opacity: unset;
+      color: map-get($color, 4);
+      @include media(1024px) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: map-get($color, 8);
+        padding: _rem(7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: _rem(30);
+        height: _rem(30);
+        color: map-get($color, 6);
+      }
+      @include media(480px) {
+        width: _rem(16);
+        height: _rem(16);
+        padding: _rem(5);
+      }
+      &:disabled {
+        color: map-get($color, 2);
+        opacity: 0.7;
+      }
+      &.splide__arrow--prev {
+        margin-bottom: _vw(10);
+        @include media(1024px) {
+          transform: rotate(-90deg);
+        }
+      }
+      &.splide__arrow--next {
+        @include media(1024px) {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  .splide__pagination {
+    right: unset;
+    left: _vw(149);
+    bottom: _vw(240);
+    flex-direction: column;
+    @include media(1024px) {
+      bottom: 0;
+      flex-direction: row;
+      justify-content: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .splide__pagination__page {
+    font-family: "Montserrat";
+    font-size: _vw(35);
+    font-weight: 500;
+    padding: _vw(calc(20 / 2));
+    width: unset;
+    height: unset;
+    margin: 0;
+    line-height:_vw(53);
+    background-color: unset;
+    color: map-get($color, 5);
+    &.is-active {
+      padding: 0;
+      font-size: _vw(60);
+      background-color: map-get($color, 6);
+      box-shadow: map-get($shadow, large);
+      margin: _vw(80) 0;
+      width: _vw(110);
+      height: _vw(110);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include media(1024px) {
+        margin: _vw(80);
+      }
+    }
+  }
+}
