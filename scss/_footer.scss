@@ -1,6 +1,6 @@
 .footer {
   margin-top: _vw(420);
-  padding-top: _vw(110);
+  padding-top: _vw(100);
   padding-bottom: _vw(0);
   background-color: map-get($color, 12);
   @include media(768px) {
@@ -28,11 +28,11 @@
         }
         @include media(480px) {
           width: 50%;
-         align-self: center;
+          align-self: center;
         }
       }
       &__list {
-        transform: translateX(_vw(50)) translateY(_vw(5));
+        transform: translateX(_vw(55)) translateY(_vw(5));
         @include media(480px) {
           transform: unset;
           margin: _rem(16) 0;
@@ -51,7 +51,10 @@
         text-transform: uppercase;
         @include _clamp(font-size, 8, 30, 30);
         &::after {
-          right: _vw(50);
+          right: _vw(12);
+        }
+        &::before {
+          left: _vw(-55);
         }
         &:hover {
           color: map-get($color, 4);
@@ -98,7 +101,7 @@
     }
     p {
       @include _clamp(font-size, 8, 24, 30);
-      margin-bottom: _vw(35);
+      margin-bottom: _vw(40);
     }
     .form-group {
       display: flex;
@@ -108,7 +111,7 @@
         height: _vw(66);
         outline: 0;
         border: _rem(1) solid map-get($color, 17);
-        margin-right: _vw(15);
+        margin-right: _vw(10);
         @include media(768px) {
           height: _rem(16);
         }
@@ -118,7 +121,7 @@
       }
       .btn {
         width: _vw(100);
-        height: _vw(68);
+        height: _vw(66);
         background-color: map-get($color, 18);
         @include media(768px) {
           height: _rem(16);
@@ -127,7 +130,7 @@
     }
   }
   &__bottom {
-    transform: translateY(_vw(-30));
+    transform: translateY(_vw(-25));
     @include media(768px) {
       transform: unset;
       margin-top: _rem(16);
@@ -141,7 +144,7 @@
         padding: 0;
       }
       @include media(480px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: start;
       }
     }
@@ -149,10 +152,11 @@
       margin-right: _vw(260);
       text-transform: uppercase;
       font-weight: 300;
-      @include _clamp(font-size, 8, 27, 30);
+      @include _clamp(font-size, 8, 30, 30);
+      letter-spacing: _vw(-2);
       @include media(480px) {
         margin-right: 0;
-        margin-bottom: _rem(16);
+        margin-top: _rem(16);
       }
     }
     .nav {
@@ -166,7 +170,12 @@
         padding: _vw(10);
         font-weight: 300;
         text-transform: lowercase;
+        color: map-get($color, 4);
         @include _clamp(font-size, 8, 28, 30);
+        transition: all 0.4s ease;
+        &:hover {
+          font-weight: 700;
+        }
         &::after {
           right: _vw(-25);
         }

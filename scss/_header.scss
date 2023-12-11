@@ -5,11 +5,13 @@
   z-index: 99;
   &.active {
     background-color: map-get($color, 6);
+    box-shadow: map-get($shadow, normal);
   }
   @include media(1024px) {
     position: static;
     background-color: map-get($color, 6);
     margin-bottom: _rem(16);
+    box-shadow: map-get($shadow, small);
   }
   &__nav {
     &.nav {

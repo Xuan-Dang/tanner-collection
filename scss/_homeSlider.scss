@@ -4,17 +4,19 @@
       position: absolute;
       top: 52%;
       transform: translateY(-50%);
-      left: _vw(700);
+      left: _vw(695);
       p {
         @include _clamp(font-size, 8, 43, 43);
         line-height: _vw(65);
+        margin-bottom: _vw(10);
       }
       h2 {
         @include _clamp(font-size, 12, 97, 97);
         font-weight: 900;
-        letter-spacing: _vw(22.5);
+        letter-spacing: _vw(23);
         text-transform: uppercase;
         line-height: _vw(165);
+        transform: translateY(_vw(-5));
       }
       a {
         display: flex;
@@ -57,7 +59,7 @@
     justify-content: center;
     align-items: center;
     @include media(1500) {
-        left: _vw(500);
+      left: _vw(500);
     }
     @include media(1024px) {
       position: static;
@@ -137,12 +139,12 @@
     width: unset;
     height: unset;
     margin: 0;
-    line-height:_vw(53);
+    line-height: _vw(53);
     background-color: unset;
     color: map-get($color, 5);
     &.is-active {
       padding: 0;
-      font-size: _vw(60);
+      font-size: _vw(55);
       background-color: map-get($color, 6);
       box-shadow: map-get($shadow, large);
       margin: _vw(80) 0;
