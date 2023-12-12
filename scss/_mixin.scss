@@ -7,6 +7,13 @@
   $rem: calc($value / $mainFontSize) + rem;
   @return $rem;
 }
+@function vwToPx($value) {
+  $px: calc(calc($value/100) * $viewPointWidth) + px;
+  @return $px;
+}
+@function vwNoUnit($value) {
+  @return calc(calc($value/$viewPointWidth) * 100);
+}
 @function _vw($value) {
   $vw: calc(calc($value/$viewPointWidth) * 100) + vw;
   @return $vw;

@@ -3,37 +3,39 @@
   padding-top: _vw(100);
   padding-bottom: _vw(0);
   background-color: map-get($color, 12);
-  @include media(768px) {
+  @include media(992px) {
     padding: _rem(16);
   }
   &__top {
     padding-right: _vw(188);
     padding-left: _vw(173);
-    @include media(768px) {
+    @include media(992px) {
       padding: 0;
     }
     .nav {
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
-      @include media(480px) {
+      @include media(992px) {
         flex-direction: column;
         align-items: start;
       }
       &__brand {
         width: _vw(308);
         transform: translateY(_vw(-30));
-        @include media(768px) {
+        @include media(992px) {
           transform: unset;
         }
-        @include media(480px) {
-          width: 50%;
+        @include media(992px) {
+          width: _rem(150);
           align-self: center;
+          margin-bottom: _rem(16);
         }
       }
       &__list {
-        transform: translateX(_vw(55)) translateY(_vw(5));
-        @include media(480px) {
+        transform: translateX(_vw(42.5)) translateY(_vw(0));
+        padding: 0 _vw(10);
+        @include media(992px) {
           transform: unset;
           margin: _rem(16) 0;
         }
@@ -49,7 +51,7 @@
         color: map-get($color, 13);
         font-weight: 700;
         text-transform: uppercase;
-        @include _clamp(font-size, 8, 30, 30);
+        @include _clamp(font-size, 12, 30, 30);
         &::after {
           right: _vw(12);
         }
@@ -59,24 +61,40 @@
         &:hover {
           color: map-get($color, 4);
         }
+        &.active {
+          color: map-get($color, 4);
+        }
+        @include media(992px) {
+          &::after {
+            right: _rem(-5);
+          }
+          &::before {
+            left: _rem(-10);
+          }
+        }
       }
     }
   }
   &__address {
-    width: _vw(340);
+    width: _vw(320);
     line-height: _vw(40);
-    @include _clamp(font-size, 8, 30, 30);
-    letter-spacing: _vw(-0.6);
-    transform: translate(_vw(-80), 0);
-    font-weight: 300;
+    @include _clamp(font-size, 12, 30, 30);
+    letter-spacing: _vw(0.25);
+    transform: translate(_vw(-105), 0);
+    font-weight: 100;
     b {
-      font-weight: 500;
+      font-weight: 400;
     }
-    @include media(768px) {
+    span {
+      width: 80%;
+      display: block;
+      letter-spacing: _vw(0.25);
+    }
+    @include media(992px) {
       line-height: 1.25;
       transform: unset;
     }
-    @include media(488px) {
+    @include media(992px) {
       width: 100%;
       margin-bottom: _rem(16);
     }
@@ -85,23 +103,30 @@
     width: _vw(600);
     margin-top: _vw(40);
     transform: translate(_vw(100), _vw(-35));
+    font-family: "Montserrat", sans-serif;
     line-height: _vw(30);
-    @include media(768px) {
+    @include media(992px) {
       line-height: 1.25;
     }
-    @include media(480px) {
+    @include media(992px) {
       width: 100%;
       transform: unset;
     }
-    h4 {
+    h6 {
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: _vw(40);
-      @include _clamp(font-size, 8, 30, 30);
+      transform: translateY(_vw(-5));
+      @include _clamp(font-size, 12, 30, 30);
     }
     p {
-      @include _clamp(font-size, 8, 24, 30);
-      margin-bottom: _vw(40);
+      @include _clamp(font-size, 12, 25, 30);
+      margin-bottom: _vw(30);
+      line-height: _vw(33);
+      font-weight: 100;
+      @include media(992px) {
+        line-height: 1.25;
+      }
     }
     .form-group {
       display: flex;
@@ -112,18 +137,16 @@
         outline: 0;
         border: _rem(1) solid map-get($color, 17);
         margin-right: _vw(10);
-        @include media(768px) {
+        @include media(992px) {
           height: _rem(16);
-        }
-        @include media(480px) {
-          width: 100%;
+          width: _rem(200);
         }
       }
       .btn {
         width: _vw(100);
         height: _vw(66);
         background-color: map-get($color, 18);
-        @include media(768px) {
+        @include media(992px) {
           height: _rem(16);
         }
       }
@@ -131,7 +154,7 @@
   }
   &__bottom {
     transform: translateY(_vw(-25));
-    @include media(768px) {
+    @include media(992px) {
       transform: unset;
       margin-top: _rem(16);
     }
@@ -140,10 +163,10 @@
       padding: 0 _vw(174);
       align-items: center;
       padding-bottom: _vw(10);
-      @include media(768px) {
+      @include media(992px) {
         padding: 0;
       }
-      @include media(480px) {
+      @include media(992px) {
         flex-direction: column-reverse;
         align-items: start;
       }
@@ -151,15 +174,15 @@
     .copyrigh-text {
       margin-right: _vw(260);
       text-transform: uppercase;
-      font-weight: 300;
-      @include _clamp(font-size, 8, 30, 30);
-      letter-spacing: _vw(-2);
-      @include media(480px) {
+      font-weight: 100;
+      @include _clamp(font-size, 12, 30, 30);
+      @include media(992px) {
         margin-right: 0;
         margin-top: _rem(16);
       }
     }
     .nav {
+      transform: translateY(-15);
       &__item {
         margin-right: _vw(160);
         &:last-child {
@@ -171,16 +194,39 @@
         font-weight: 300;
         text-transform: lowercase;
         color: map-get($color, 4);
-        @include _clamp(font-size, 8, 28, 30);
+        @include _clamp(font-size, 12, 28, 30);
         transition: all 0.4s ease;
-        &:hover {
-          font-weight: 700;
-        }
         &::after {
           right: _vw(-25);
         }
         &::before {
           left: _vw(-85);
+        }
+        &:hover {
+          font-weight: 700;
+          &::after {
+            right: _vw(-20);
+            top: 55%;
+          }
+          &::before {
+            top: 55%;
+          }
+        }
+        &.active {
+          font-weight: 700;
+        }
+        @include media(992px) {
+          &::after {
+            right: _rem(-7);
+          }
+          &::before {
+            left: _rem(-15);
+          }
+        }
+        @include media(380px) {
+          &::before {
+            left: _rem(-7);
+          }
         }
       }
     }

@@ -41,7 +41,7 @@
         }
       }
       &__list {
-        margin-left: _vw(calc(274 - calc(22 + calc(169 / 2))));
+        margin-left: _vw(250);
         transform: translateY(_vw(-10));
         &__fixed-header {
           display: none;
@@ -81,28 +81,34 @@
         }
       }
       &__item {
-        margin-right: _vw(5);
+        margin-right: _vw(170);
         &:last-child {
           margin-right: 0;
         }
         @include media(992px) {
           width: 100%;
-          margin-right: 0
+          margin-right: 0;
         }
       }
       &__link {
-        @include toVw(padding, calc(170 / 2));
         @include _clamp(font-size, 14, 30, 30);
         line-height: _vw(60);
         text-transform: uppercase;
         font-weight: 700;
-        color: map-get($color, 1);
+        color: map-get($color, 4);
+        &.text-white {
+          color: map-get($color, 6);
+          @include media(992px) {
+            color: map-get($color, 4);
+          }
+        }
         @include media(992px) {
           width: 100%;
           &::after,
           &::before {
             display: none;
           }
+          padding: _rem(10);
         }
       }
     }

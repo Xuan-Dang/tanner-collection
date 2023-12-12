@@ -906,7 +906,6 @@ html {
 }
 .collection__body .number {
   width: 3.9473684211vw;
-  box-shadow: 4px 22px 81px 0px rgba(1, 19, 32, 0.52);
 }
 .collection__body .number img {
   image-rendering: auto !important;
@@ -1634,4 +1633,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=css.index.css.map */
