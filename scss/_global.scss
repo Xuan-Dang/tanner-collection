@@ -90,7 +90,7 @@ html {
   border: 0;
   background-color: map-get($color, 2);
   transition: background-color 0.4s;
-  @include toRem(padding, 7);
+  padding: _rem(7);
   color: map-get($color, 6);
   &:hover {
     background-color: map-get($color, 9);

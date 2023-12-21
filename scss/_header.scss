@@ -43,7 +43,7 @@
       }
       &__list {
         @include _clamp(margin-left, 14, 230, 250);
-        transform: translateY(_vw(-10));
+        transform: translateY(_clamp(-10, -10, -1));
         &__fixed-header {
           display: none;
           @include media(992px) {
@@ -82,7 +82,7 @@
         }
       }
       &__item {
-        margin-right: _vw(170);
+        margin-right: _clamp(17, 170, 170);
         @include _clamp(margin-right, 16, 170, 170);
         &:last-child {
           margin-right: 0;
@@ -94,7 +94,7 @@
       }
       &__link {
         @include _clamp(font-size, 14, 30, 30);
-        line-height: _vw(60);
+        line-height: _clamp(6, 60, 60);
         text-transform: uppercase;
         font-weight: 700;
         color: map-get($color, 4);

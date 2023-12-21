@@ -3,7 +3,7 @@
     display: flex;
     position: relative;
     &.first {
-      margin: _vw(393) 0;
+      margin: _clamp(39.3, 393, 393) 0;
       @include _clamp(margin-top, 16, 393, 393);
       @include _clamp(margin-bottom, 16, 393, 393);
       .story {
@@ -35,14 +35,14 @@
             right: _rem(250);
           }
           h2 {
-            transform: translate(_vw(-1), _vw(-5));
+            transform: translate(_clamp(-1, -1, -0.1), _clamp(-5, -5, -0.5));
             @include _clamp(margin-bottom, 5, 30, 30);
           }
         }
         &__description {
-          width: _vw(660);
+          width: _clamp(66, 660, 660);
           @include _clamp(width, 100, 660, 660);
-          transform: translateX(_vw(10));
+          transform: translateX(_clamp(1, 10, 10));
           @include media(1200px) {
             width: 50%;
           }
@@ -116,9 +116,9 @@
             left: _rem(250);
           }
           h3 {
-            margin-bottom: _vw(30);
+            margin-bottom: _clamp(3, 30, 30);
             @include _clamp(margin-bottom, 16, 30, 30);
-            transform: translate(_vw(-5), _vw(5));
+            transform: translate(_clamp(-5, -5, -0.5), _clamp(0.5, 5, 5));
             @include _clamp(margin-bottom, 0, 25.5, 25.5);
           }
           p {
@@ -132,7 +132,7 @@
         }
         &__description {
           @include _clamp(width, 100, 780, 780);
-          transform: translateY(_vw(-5));
+          transform: translateY(_clamp(-5, -5, -0.5));
           @include media(1200px) {
             width: 50%;
           }
@@ -141,7 +141,7 @@
           }
         }
         &__image {
-          transform: translateY(_vw(-5));
+          transform: translateY(_clamp(-5, -5, -0.5));
         }
       }
     }
@@ -185,7 +185,7 @@
       text-align: center;
       img {
         @include _clamp(width, 16, 32, 32);
-        transform: translateY(_vw(5));
+        transform: translateY(_clamp(0.5, 5, 5));
         object-fit: cover;
       }
       @include media(992px) {

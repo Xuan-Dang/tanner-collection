@@ -114,7 +114,7 @@
     }
     .box {
       display: grid;
-      grid-template-columns: _vw(1905) auto;
+      grid-template-columns: _clamp(200, 1905, 1905) auto;
       @include media(992px) {
         grid-template-columns: auto;
       }
@@ -123,19 +123,19 @@
         .number {
           position: relative;
           z-index: 9;
-          transform: translateY(_vw(25));
+          transform: translateY(_clamp(5, 25, 25));
           @include media(992px) {
             transform: translate(_rem(5), _rem(-5));
           }
           &::after {
             content: "";
-            width: _vw(277);
+            @include _clamp(width, 27.7, 277, 277);
             @include _clamp(height, 1, 3, 3);
             background-color: map-get($color, 4);
             position: absolute;
             display: block;
-            right: _vw(-315);
-            top: _vw(43);
+            @include _clamp(right, -315, -315, 0);
+            @include _clamp(top, 0, 43, 43);
             @include media(480px) {
               display: none;
             }
@@ -143,28 +143,28 @@
         }
         .content {
           width: 100%;
-          padding-left: _vw(370);
-          padding-top: _vw(120);
-          padding-right: _vw(485);
+          @include _clamp(padding-left, 30, 370, 370);
+          @include _clamp(padding-top, 30, 120, 120);
+          @include _clamp(padding-right, 30, 485, 485);
           @include media(992px) {
             padding-left: _rem(30);
           }
           h5 {
-            margin-bottom: _vw(22);
+            @include _clamp(margin-bottom, 5, 22, 22);
             position: relative;
-            transform: translateY(_vw(-10));
+            transform: translateY(_clamp(-10, -10, 0));
             @include media(992px) {
               width: fit-content;
             }
             span {
               display: block;
-              width: _vw(1069);
-              height: _vw(59);
+              @include _clamp(width, 100, 1068, 1068);
+              @include _clamp(height, 19, 59, 59);
               background-color: map-get($color, 8);
               position: absolute;
               z-index: -1;
-              left: _vw(-60);
-              top: _vw(30);
+              @include _clamp(left, -60, -60, 0);
+              @include _clamp(top, 0, 30, 30);
               @include media(992px) {
                 left: 0;
                 right: 0;
@@ -173,36 +173,36 @@
             }
           }
           &__body {
-            padding-left: _vw(330);
-            padding-right: _vw(50);
-            letter-spacing: _vw(2);
+            @include _clamp(padding-left, 33, 330, 330);
+            @include _clamp(padding-right, 5, 50, 50);
+            @include _clamp(letter-spacing, 0.25, 2, 2);
             @include media(992px) {
               padding-left: _rem(0);
             }
             p {
-              letter-spacing: _vw(0);
-              margin-bottom: _vw(35);
+              letter-spacing: 0;
+              @include _clamp(margin-bottom, 3.5, 35, 35);
               @include _clamp(font-size, 12, 30, 30);
             }
             a {
-              letter-spacing: _vw(0.25);
+              @include _clamp(letter-spacing, 0, 0.25, 0.25);
               span {
-                margin-right: _vw(15);
+                @include _clamp(margin-right, 5, 15, 15);
               }
             }
           }
         }
         .image {
           position: relative;
-          transform: translate(_vw(-5), _vw(-10));
+          transform: translate(_clamp(-5, -5, 0), _clamp(-10, -10, 0));
           span {
             background-color: map-get($color, 4);
             position: absolute;
-            width: _vw(277);
+            @include _clamp(width, 50, 277, 277);
             @include _clamp(height, 1, 3, 3);
-            left: _vw(262);
+            @include _clamp(left, 100, 262, 262);
             display: block;
-            bottom: _vw(35);
+            @include _clamp(bottom, 3.5, 35, 35);
             rotate: 90deg;
             @include media(480px) {
               display: none;
@@ -213,17 +213,18 @@
       &--right {
         background-image: url("../image/logo_text_2.png");
         background-repeat: no-repeat;
-        background-position: right _vw(385) top _vw(880);
-        background-size: _vw(308);
+        background-position: right _clamp(38.5, 385, 385) top
+          _clamp(88, 880, 880);
+        background-size: _clamp(30.8, 308, 308);
         @include media(992px) {
           display: flex;
           flex-direction: column-reverse;
           margin-top: _rem(16);
         }
         .content {
-          margin-top: _vw(450);
-          padding-left: _vw(95);
-          margin-bottom: _vw(470);
+          margin-top: _clamp(45, 450, 450);
+          padding-left: _clamp(9.5, 95, 95);
+          margin-bottom: _clamp(47, 470, 470);
           position: relative;
           @include media(992px) {
             margin: _rem(16) 0;
@@ -237,34 +238,35 @@
             display: block;
             z-index: 9;
             &.line-top {
-              width: _vw(136);
-              top: _vw(-105);
-              left: _vw(30);
+              width: _clamp(13.6, 136, 136);
+              top: _clamp(-105, -105, -10.5);
+              left: _clamp(3, 30, 30);
             }
             &.line-bottom {
-              width: _vw(270);
-              bottom: _vw(-285);
-              left: _vw(-15);
+              width: _clamp(27, 270, 270);
+              bottom: _clamp(-285, -285, -28.5);
+              left: _clamp(-15, -15, -1.5);
             }
             @include media(480px) {
               display: none;
             }
           }
           h5 {
-            transform: translateY(_vw(0));
-            margin-bottom: _vw(30);
+            transform: translateY(0);
+            margin-bottom: _clamp(3, 30, 30);
           }
           p {
-            margin-bottom: _vw(40);
-            line-height: _vw(40);
-            letter-spacing: _vw(-0.75);
+            margin-bottom: _clamp(4, 40, 40);
+            line-height: _clamp(4, 40, 40);
+            letter-spacing: _clamp(-0.75, -0.75, 0);
             @include media(992px) {
               line-height: 1.25;
             }
           }
         }
         .image {
-          transform: scale(1.4) translate(_vw(-87), _vw(-1));
+          transform: scale(1.4)
+            translate(_clamp(-87, -87, -8.7), _clamp(-1, -1, 0));
           @include media(992px) {
             transform: unset;
           }
@@ -273,16 +275,16 @@
     }
   }
   &__bottom {
-    padding-left: _vw(700);
-    padding-right: _vw(630);
-    margin-top: _vw(55);
+    padding-left: _clamp(70, 700, 700);
+    padding-right: _clamp(63, 630, 630);
+    margin-top: _clamp(5.5, 55, 55);
     @include media(992px) {
       padding: 0 _rem(30);
       margin-top: _rem(16);
     }
     .box {
       display: grid;
-      grid-template-columns: auto _vw(1360);
+      grid-template-columns: auto _clamp(136, 1360, 1360);
       @include media(992px) {
         grid-template-columns: auto;
       }
@@ -291,9 +293,9 @@
         z-index: 2;
         .number {
           position: absolute;
-          top: _vw(30);
-          right: _vw(-165);
-          width: _vw(178);
+          top: _clamp(3, 30, 30);
+          right: _clamp(-165, -165, -16.5);
+          width: _clamp(17.8, 178, 178);
           z-index: 9;
           @include media(992px) {
             right: _rem(5);
@@ -301,7 +303,8 @@
           }
         }
         .image {
-          transform: scale(1.08) translate(_vw(25), _vw(90));
+          transform: scale(1.08)
+            translate(_clamp(2.5, 25, 25), _clamp(9, 90, 90));
           @include media(992px) {
             transform: unset;
           }
@@ -312,17 +315,17 @@
           font-weight: 700;
           text-transform: uppercase;
           font-family: "Montserrat", sans-serif;
-          top: _vw(990);
-          right: _vw(50);
-          width: _vw(856);
-          letter-spacing: _vw(42);
-          line-height: _vw(135);
+          top: _clamp(99, 990, 990);
+          right: _clamp(5, 50, 50);
+          width: _clamp(85.6, 856, 856);
+          letter-spacing: _clamp(4.2, 42, 42);
+          line-height: _clamp(13.5, 135, 135);
           color: map-get($color, 6);
           text-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
           @include media(992px) {
-            bottom: _vw(200);
+            bottom: _clamp(20, 200, 200);
             right: unset;
-            left: _vw(300);
+            left: _clamp(20, 300, 300);
             line-height: 1.25;
             top: unset;
           }
@@ -334,9 +337,9 @@
         }
         .number {
           position: absolute;
-          right: _vw(-5);
-          width: _vw(173);
-          top: _vw(-45);
+          right: _clamp(-5, -5, 0);
+          width: _clamp(17.3, 173, 173);
+          top: _clamp(-4.5, -45, -45);
           z-index: 2;
           @include media(480px) {
             top: _rem(-10);
@@ -345,7 +348,7 @@
         }
         .image {
           position: relative;
-          transform: translateX(_vw(-65));
+          transform: translateX(_clamp(-65, -65, -6.5));
 
           @include media(480px) {
             transform: unset;
@@ -355,12 +358,12 @@
             position: absolute;
             z-index: 1;
             bottom: 0;
-            right: _vw(30);
-            width: _vw(430);
-            height: _vw(92);
+            right: _clamp(3, 30, 30);
+            width: _clamp(43, 430, 430);
+            height: _clamp(9.2, 92, 92);
             background-color: map-get($color, 15);
             @include media(1300px) {
-              height: _vw(95);
+              height: _clamp(9.5, 95, 95);
             }
             @include media(992px) {
               display: none;
@@ -368,21 +371,21 @@
           }
         }
         .content {
-          padding-left: _vw(430);
-          margin-bottom: _vw(70);
-          padding-top: _vw(150);
+          padding-left: _clamp(43, 430, 430);
+          margin-bottom: _clamp(7, 70, 70);
+          padding-top: _clamp(15, 150, 150);
           @include media(992px) {
             padding: _rem(10);
             margin: _rem(16) 0;
           }
           h5 {
-            transform: translateY(_vw(5));
+            transform: translateY(_clamp(0.5, 5, 5));
           }
           p {
-            margin-top: _vw(50);
-            padding-bottom: _vw(40);
-            line-height: _vw(40);
-            letter-spacing: _vw(-0.825);
+            margin-top: _clamp(5, 50, 50);
+            padding-bottom: _clamp(4, 40, 40);
+            line-height: _clamp(4, 40, 40);
+            letter-spacing: _clamp(-0.825, -0.825, 0);
             @include media(992px) {
               line-height: 1.25;
               margin: _rem(16) 0;
@@ -394,23 +397,23 @@
     }
   }
   &__gallery {
-    padding-right: _vw(700);
-    margin-top: _vw(45);
+    padding-right: _clamp(70, 700, 700);
+    margin-top: _clamp(4.5, 45, 45);
     position: relative;
     @include media(992px) {
       padding: _rem(16);
     }
     .gallery {
       display: flex;
-      transform: translateX(_vw(115));
+      transform: translateX(_clamp(11.5, 115, 115));
       flex-wrap: wrap;
       @include media(992px) {
         transform: unset;
         justify-content: center;
       }
       &__item {
-        width: calc(calc(100% / 6) - calc(_vw(50) * 2));
-        padding: 0 _vw(50);
+        width: calc(calc(100% / 6) - calc(_clamp(5, 50, 50) * 2));
+        padding: 0 _clamp(5, 50, 50);
         cursor: pointer;
         position: relative;
         &::after {
@@ -418,11 +421,11 @@
           content: "";
           background-image: url("../image/zome_icon_white.png");
           position: absolute;
-          background-size: _vw(100);
+          background-size: _clamp(10, 100, 100);
           display: none;
           top: 0;
-          left: _vw(50);
-          right: _vw(50);
+          left: _clamp(5, 50, 50);
+          right: _clamp(5, 50, 50);
           bottom: 0;
           background-repeat: no-repeat;
           background-position: center;
@@ -433,15 +436,15 @@
           }
         }
         @include media(992px) {
-          width: calc(calc(100% / 3) - calc(_vw(50) * 2));
-          padding: _vw(50);
+          width: calc(calc(100% / 3) - calc(_clamp(5, 50, 50) * 2));
+          padding: _clamp(5, 50, 50);
         }
       }
       &__transparent {
         position: absolute;
-        width: _vw(429);
+        width: _clamp(42.9, 429, 429);
         bottom: 0;
-        right: _vw(725);
+        right: _clamp(72.5, 725, 725);
         z-index: -1;
         @include media(992px) {
           display: none;
@@ -453,9 +456,9 @@
         }
         .text-group {
           position: absolute;
-          width: _vw(220);
-          bottom: _vw(165);
-          right: _vw(40);
+          width: _clamp(22, 220, 220);
+          bottom: _clamp(16.5, 165, 165);
+          right: _clamp(4, 40, 40);
           font-family: "Montserrat", sans-serif;
           @include _clamp(font-size, 16, 120, 120);
           color: map-get($color, 19);
@@ -463,13 +466,13 @@
           font-weight: 700;
           p {
             &.first {
-              transform: translateX(_vw(-6));
+              transform: translateX(_clamp(-6, -6, -0.6));
             }
             &.second {
-              letter-spacing: _vw(10);
-              transform: translate(_vw(-8), _vw(10));
+              letter-spacing: _clamp(1, 10, 10);
+              transform: translate(_clamp(-8, -8, -0.8), _clamp(1, 10, 10));
               span {
-                margin-right: _vw(20);
+                margin-right: _clamp(2, 20, 20);
               }
             }
           }

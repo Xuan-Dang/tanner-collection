@@ -1,14 +1,14 @@
 .footer {
-  margin-top: _vw(420);
-  padding-top: _vw(100);
-  padding-bottom: _vw(0);
+  margin-top: _clamp(42, 420, 420);
+  padding-top: _clamp(10, 100, 100);
+  padding-bottom: 0;
   background-color: map-get($color, 12);
   @include media(992px) {
     padding: _rem(16);
   }
   &__top {
-    padding-right: _vw(188);
-    padding-left: _vw(173);
+    padding-right: _clamp(18.8, 188, 188);
+    padding-left: _clamp(17.3, 173, 173);
     @include media(992px) {
       padding: 0;
     }
@@ -21,8 +21,8 @@
         align-items: start;
       }
       &__brand {
-        width: _vw(308);
-        transform: translateY(_vw(-30));
+        width: _clamp(30.8, 308, 308);
+        transform: translateY(_clamp(-30, -30, -3));
         @include media(992px) {
           transform: unset;
         }
@@ -33,30 +33,30 @@
         }
       }
       &__list {
-        transform: translateX(_vw(42.5)) translateY(_vw(0));
-        padding: 0 _vw(10);
+        transform: translateX(_clamp(4.25, 42.5, 42.5)) translateY(0);
+        padding: 0 _clmap(1, 10, 10);
         @include media(992px) {
           transform: unset;
           margin: _rem(16) 0;
         }
       }
       &__item {
-        margin-right: _vw(80);
+        margin-right: _clamp(8, 80, 80);
         &:last-child {
           margin-right: 0;
         }
       }
       &__link {
-        padding: 0 _vw(calc(70 / 2));
+        padding: 0 _clamp(calc(calc(70 / 2) / 10), calc(70 / 2), calc(70 / 2));
         color: map-get($color, 13);
         font-weight: 700;
         text-transform: uppercase;
         @include _clamp(font-size, 12, 30, 30);
         &::after {
-          right: _vw(12);
+          right: _clamp(1.2, 12, 12);
         }
         &::before {
-          left: _vw(-55);
+          left: _clamp(-55, -55, -5.5);
         }
         &:hover {
           color: map-get($color, 4);
@@ -76,11 +76,11 @@
     }
   }
   &__address {
-    width: _vw(320);
-    line-height: _vw(40);
+    width: _clamp(32, 320, 320);
+    line-height: _clamp(4, 40, 40);
     @include _clamp(font-size, 12, 30, 30);
-    letter-spacing: _vw(0.25);
-    transform: translate(_vw(-105), 0);
+    letter-spacing: _clamp(0, 0, 0.25);
+    transform: translate(_clamp(-105, -105, -10.5), 0);
     font-weight: 100;
     b {
       font-weight: 400;
@@ -88,7 +88,7 @@
     span {
       width: 80%;
       display: block;
-      letter-spacing: _vw(0.25);
+      letter-spacing: _clamp(0, 0.25, 0.25);
     }
     @include media(992px) {
       line-height: 1.25;
@@ -100,11 +100,11 @@
     }
   }
   &__email {
-    width: _vw(600);
-    margin-top: _vw(40);
-    transform: translate(_vw(100), _vw(-35));
+    width: _clamp(60, 600, 600);
+    margin-top: _clamp(4, 40, 40);
+    transform: translate(_clamp(10, 100, 100), _clamp(-35, -35, -3.5));
     font-family: "Montserrat", sans-serif;
-    line-height: _vw(30);
+    line-height: _clamp(3, 30, 30);
     @include media(992px) {
       line-height: 1.25;
     }
@@ -115,14 +115,14 @@
     h6 {
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: _vw(40);
-      transform: translateY(_vw(-5));
+      margin-bottom: _clamp(4, 40, 40);
+      transform: translateY(_clamp(-5, -5, -0.5));
       @include _clamp(font-size, 12, 30, 30);
     }
     p {
       @include _clamp(font-size, 12, 25, 30);
-      margin-bottom: _vw(30);
-      line-height: _vw(33);
+      margin-bottom: _clamp(3, 30, 30);
+      line-height: _clamp(3.3, 33, 33);
       font-weight: 100;
       @include media(992px) {
         line-height: 1.25;
@@ -132,19 +132,19 @@
       display: flex;
       align-items: center;
       input {
-        width: _vw(380);
-        height: _vw(66);
+        width: _clamp(38, 380, 380);
+        height: _clamp(6.6, 66, 66);
         outline: 0;
         border: _rem(1) solid map-get($color, 17);
-        margin-right: _vw(10);
+        margin-right: _clamp(1, 10, 10);
         @include media(992px) {
           height: _rem(16);
           width: _rem(200);
         }
       }
       .btn {
-        width: _vw(100);
-        height: _vw(66);
+        width: _clamp(10, 100, 100);
+        height: _clamp(6.6, 66, 66);
         background-color: map-get($color, 18);
         @include media(992px) {
           height: _rem(16);
@@ -153,16 +153,16 @@
     }
   }
   &__bottom {
-    transform: translateY(_vw(-25));
+    transform: translateY(_clamp(-25, -25, -2.5));
     @include media(992px) {
       transform: unset;
       margin-top: _rem(16);
     }
     .wrapper {
       display: flex;
-      padding: 0 _vw(174);
+      padding: 0 _clamp(17.4, 174, 174);
       align-items: center;
-      padding-bottom: _vw(10);
+      padding-bottom: _clamp(1, 10, 10);
       @include media(992px) {
         padding: 0;
       }
@@ -172,7 +172,7 @@
       }
     }
     .copyrigh-text {
-      margin-right: _vw(260);
+      margin-right: _clamp(26, 260, 260);
       text-transform: uppercase;
       font-weight: 100;
       @include _clamp(font-size, 12, 30, 30);
@@ -182,30 +182,30 @@
       }
     }
     .nav {
-      transform: translateY(-15);
+      transform: translateY(_clamp(-15, -15, -1.5));
       &__item {
-        margin-right: _vw(160);
+        margin-right: _clamp(16, 160, 160);
         &:last-child {
           margin-right: 0;
         }
       }
       &__link {
-        padding: _vw(10);
+        padding: _clamp(1, 10, 10);
         font-weight: 300;
         text-transform: lowercase;
         color: map-get($color, 4);
         @include _clamp(font-size, 12, 28, 30);
         transition: all 0.4s ease;
         &::after {
-          right: _vw(-25);
+          right: _clamp(-25, -25, -2.5);
         }
         &::before {
-          left: _vw(-85);
+          left: _clamp(-85, -85, -8.5);
         }
         &:hover {
           font-weight: 700;
           &::after {
-            right: _vw(-20);
+            right: _clamp(-20, -20, -2);
             top: 55%;
           }
           &::before {
