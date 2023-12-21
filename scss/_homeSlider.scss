@@ -4,20 +4,20 @@
       position: absolute;
       top: 52%;
       transform: translateY(-50%);
-      left: _vw(695);
+      @include _clamp(left, 16, 695, 695);
       font-family: "Montserrat", sans-serif;
       p {
         @include _clamp(font-size, 12, 43, 43);
-        line-height: _vw(65);
-        margin-bottom: _vw(10);
+        @include _clamp(line-height, calc(12 * 1.25), 65, 65);
+        @include _clamp(margin-bottom, 5, 10, 10);
         color: map-get($color, 3);
       }
       h1 {
         @include _clamp(font-size, 12, 97, 97);
         font-weight: 700;
-        letter-spacing: _vw(25);
+        @include _clamp(letter-spacing, 1, 25, 25);
         text-transform: uppercase;
-        line-height: _vw(165);
+        @include _clamp(line-height, calc(12 * 1.25), 165, 165);
         transform: translateY(_vw(-5));
         box-shadow: 5px 26px 81px 0px rgba(0, 15, 26, 0);
       }
@@ -25,25 +25,26 @@
         display: flex;
         align-items: center;
         position: absolute;
-        bottom: _vw(-135);
+        @include _clamp(bottom, -135, -135, 0);
         @include _clamp(font-size, 12, 43, 43);
         font-weight: 500;
-        transform: translateX(_vw(208));
+        @include _clamp(left, 16, 208, 208);
         text-decoration: none;
         color: map-get($color, 2);
         span {
-          margin-right: _vw(32);
+          @include _clamp(margin-right, 5, 32, 32);
         }
         &::before {
           content: "";
           display: block;
-          width: _vw(77);
+          @include _clamp(width, 16, 77, 77);
           @include _clamp(height, 1, 3, 3);
-          margin-right: _vw(25);
+          @include _clamp(margin-right, 5, 25, 25);
+          @include _clamp(margin-right, 5, 25, 25);
           background-color: map-get($color, 2);
         }
         .fa.fa-angle-right {
-          font-size: _vw(60);
+          @include _clamp(font-size, 12, 60, 60);
         }
         &:hover {
           opacity: 0.8;
@@ -51,7 +52,7 @@
       }
     }
     &__image-wrapper {
-      @include toVw(width, 2479);
+      @include _clamp(width, 200, 2479, 2479);
       margin-left: auto;
       img {
         width: 100%;
@@ -62,16 +63,13 @@
   }
   .splide__arrows {
     position: absolute;
-    top: _vw(355);
-    left: _vw(203);
+    @include _clamp(top, 16, 355, 355);
+    @include _clamp(left, 16, 203, 203);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Montserrat", sans-serif;
-    @include media(1500) {
-      left: _vw(500);
-    }
     @include media(1024px) {
       position: static;
     }
@@ -79,7 +77,7 @@
       content: "";
       display: block;
       @include _clamp(width, 1, 3, 3);
-      height: _vw(77);
+      @include _clamp(height, 16, 77, 77);
       background-color: map-get($color, 2);
       @include media(1024px) {
         display: none;
@@ -89,7 +87,7 @@
       position: static;
       transform: unset;
       background-color: unset;
-      font-size: _vw(90);
+      @include _clamp(font-size, 12, 90, 90);
       width: unset;
       height: unset;
       opacity: unset;
@@ -131,10 +129,11 @@
   }
   .splide__pagination {
     right: unset;
-    left: _vw(149);
-    bottom: _vw(240);
+    @include _clamp(bottom, 16, 240, 240);
+    @include _clamp(left, 16, 175, 175);
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
+    padding: 0;
     @include media(1024px) {
       bottom: 0;
       flex-direction: row;
@@ -145,14 +144,13 @@
   }
   .splide__pagination__page {
     font-family: "Montserrat", sans-serif;
-    font-size: _vw(35);
     @include _clamp(font-size, 12, 35, 35);
     font-weight: 700;
-    padding: _vw(calc(20 / 2));
+    @include _clamp(padding, 5, calc(20 / 2), calc(20 / 2));
     width: unset;
     height: unset;
     margin: 0;
-    line-height: _vw(53);
+    @include _clamp(line-height, calc(1.25 * 12), 53, 53);
     background-color: unset;
     opacity: 1;
     color: map-get($color, 5);
@@ -161,12 +159,13 @@
     }
     &.is-active {
       padding: 0;
-      @include _clamp(font-size, 12, 55, 55);
+      @include _clamp(font-size, 8, 55, 55);
       background-color: map-get($color, 6);
       box-shadow: map-get($shadow, large);
-      margin: _vw(80) 0;
-      width: _vw(110);
-      height: _vw(110);
+      @include _clamp(margin-top, 16, 80, 80);
+      @include _clamp(margin-bottom, 16, 80, 80);
+      @include _clamp(width, 16, 110, 110);
+      @include _clamp(height, 16, 110, 110);
       display: flex;
       align-items: center;
       justify-content: center;

@@ -1,5 +1,5 @@
 .collection {
-  margin-top: _vw(382);
+  @include _clamp(margin-top, 16, 382, 382);
   &__header {
     position: relative;
     font-family: "Montserrat", sans-serif;
@@ -7,9 +7,9 @@
       @include _clamp(font-size, 16, 120, 120);
       text-transform: uppercase;
       font-weight: 700;
-      letter-spacing: _vw(33);
-      line-height: _vw(40);
-      padding-left: _vw(775);
+      @include _clamp(letter-spacing, 0, 33, 33);
+      @include _clamp(line-height, calc(1.25 * 16), 40, 40);
+      @include _clamp(padding-left, 16, 775, 775);
       text-shadow: 4px 22px 81px rgba(1, 19, 32, 0.52);
       color: map-get($color, 3);
       @include media(992px) {
@@ -19,15 +19,14 @@
     }
     p {
       position: absolute;
-      right: _vw(398);
-      top: _vw(145);
-      padding: 0 _vw(13);
+      @include _clamp(right, 16, 398, 398);
+      @include _clamp(top, 0, 145, 145);
+      @include _clamp(padding-left, 5, 13, 13);
       @include _clamp(font-size, 12, 43, 43);
       font-weight: 500;
       color: map-get($color, 3);
-      width: _vw(1100);
       background-color: map-get($color, 8);
-      line-height: _vw(65);
+      @include _clamp(line-height, 20, 65, 65);
       text-shadow: 2px 11px 29px rgba(1, 19, 32, 0.43);
       @include media(992px) {
         left: 50%;
@@ -38,19 +37,19 @@
       &::after {
         content: "";
         display: block;
-        width: _vw(277);
+        @include _clamp(width, 50, 277, 277);
         @include _clamp(height, 1, 3, 3);
         background-color: map-get($color, 4);
         position: absolute;
-        left: _vw(-300);
-        top: _vw(35);
+        @include _clamp(left, -300, -300, 30);
+        @include _clamp(bottom, 15, 35, 35);
       }
     }
   }
   &__body {
-    margin-top: _vw(350);
+    @include _clamp("margin-top", 16, 350, 350);
     .number {
-      width: _vw(150);
+      @include _clamp("width", 50, 150, 150);
       img {
         image-rendering: auto !important;
       }
@@ -67,14 +66,14 @@
         text-transform: uppercase;
         font-family: "Montserrat", sans-serif;
         color: map-get($color, 3);
-        line-height: _vw(80);
-        letter-spacing: _vw(14);
+        @include _clamp("line-height", calc(1.25 * 12), 80, 80);
+        @include _clamp("letter-spacing", 1, 14, 14);
       }
       p {
         @include _clamp(font-size, 12, 24, 30);
         font-weight: 100;
         color: map-get($color, 3);
-        line-height: _vw(45);
+        @include _clamp("line-height", calc(1.25 * 12), 45, 45);
         text-align: justify;
         @include media(992px) {
           line-height: 1.25;
@@ -92,11 +91,10 @@
         align-items: center;
         width: fit-content;
         u {
-          margin-right: _vw(20);
+          @include _clamp("margin-right", 5, 20, 20);
           text-decoration: none;
         }
         .fa.fa-angle-right {
-          font-size: _vw(35);
           @include _clamp(font-size, 12, 35, 35);
           font-weight: 700;
         }
@@ -108,8 +106,8 @@
     }
   }
   &__top {
-    padding-left: _vw(379);
-    padding-right: _vw(676);
+    @include _clamp("padding-left", 16, 379, 379);
+    @include _clamp("padding-right", 16, 676, 676);
     @include media(992px) {
       padding-right: _rem(15);
       padding-left: _rem(15);
@@ -346,9 +344,27 @@
           }
         }
         .image {
+          position: relative;
           transform: translateX(_vw(-65));
+
           @include media(480px) {
             transform: unset;
+          }
+          span {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            right: _vw(30);
+            width: _vw(430);
+            height: _vw(92);
+            background-color: map-get($color, 15);
+            @include media(1300px) {
+              height: _vw(95);
+            }
+            @include media(992px) {
+              display: none;
+            }
           }
         }
         .content {

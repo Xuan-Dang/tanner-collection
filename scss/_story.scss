@@ -4,14 +4,18 @@
     position: relative;
     &.first {
       margin: _vw(393) 0;
+      @include _clamp(margin-top, 16, 393, 393);
+      @include _clamp(margin-bottom, 16, 393, 393);
       .story {
         &__content {
-          top: _vw(213);
-          right: _vw(310);
+          @include _clamp(top, 16, 213, 213);
+          @include _clamp(right, 16, 310, 310);
           display: flex;
           justify-content: end;
-          padding: _vw(110) _vw(190) _vw(46) 0;
-          width: _vw(1780);
+          @include _clamp(padding-top, 5, 110, 110);
+          @include _clamp(padding-bottom, 5, 47, 47);
+          @include _clamp(padding-right, 5, 190, 190);
+          @include _clamp(width, 100, 1780, 1780);
           @include media(1200px) {
             padding: _rem(30) _rem(15);
           }
@@ -19,24 +23,25 @@
             right: _rem(5);
           }
           .arrow {
-            right: _vw(305);
+            @include _clamp(right, 16, 300, 300);
             background-color: map-get($color, 6);
           }
         }
         &__title {
-          right: _vw(951);
-          top: _vw(205);
-          width: _vw(1426);
+          @include _clamp(right, 16, 951, 951);
+          @include _clamp(top, 16, 205, 205);
+          @include _clamp(width, 200, 1426, 1426);
           @include media(992px) {
             right: _rem(250);
           }
           h2 {
             transform: translate(_vw(-1), _vw(-5));
-            margin-bottom: _vw(30);
+            @include _clamp(margin-bottom, 5, 30, 30);
           }
         }
         &__description {
           width: _vw(660);
+          @include _clamp(width, 100, 660, 660);
           transform: translateX(_vw(10));
           @include media(1200px) {
             width: 50%;
@@ -49,22 +54,21 @@
     }
     &.second {
       justify-content: end;
-      padding: _vw(363) 0;
+      @include _clamp(padding-top, 16, 363, 363);
+      @include _clamp(padding-bottom, 16, 363, 363);
       background-color: map-get($color, 12);
       .story {
         &__image {
           &::before {
             content: "";
-            width: _vw(200);
-            height: _vw(200);
             position: absolute;
             background-color: transparent;
             background-image: url("../image/navy_salt_4.png");
             background-repeat: no-repeat;
-            width: _vw(638);
+            @include _clamp(width, 100, 638, 638);
             background-size: contain;
-            top: _vw(-40);
-            left: _vw(400);
+            @include _clamp(top, -40, -40, 0);
+            @include _clamp(left, 16, 400, 400);
             display: none;
             @include media(992px) {
               display: block;
@@ -72,10 +76,12 @@
           }
         }
         &__content {
-          left: _vw(310);
-          top: _vw(590);
-          padding: _vw(65) _vw(129) _vw(95);
-          width: _vw(1810);
+          @include _clamp(left, 16, 310, 310);
+          @include _clamp(top, 16, 590, 590);
+          @include _clamp(padding, 16, 129, 129);
+          @include _clamp(padding-top, 16, 65, 65);
+          @include _clamp(padding-bottom, 16, 95, 95);
+          @include _clamp(width, 200, 1810, 1810);
           @include media(1200px) {
             padding: _rem(30) _rem(15);
             top: _rem(125);
@@ -85,40 +91,39 @@
           }
           .arrow {
             background-color: map-get($color, 12);
-            left: _vw(310);
+            @include _clamp(left, 16, 307, 307);
           }
           &::before {
             content: "";
-            width: _vw(200);
-            height: _vw(200);
             position: absolute;
             background-color: transparent;
             background-image: url("../image/navy_salt_4.png");
             background-repeat: no-repeat;
-            width: _vw(638);
+            @include _clamp(width, 100, 638, 638);
             background-size: contain;
-            top: _vw(-47);
-            left: _vw(55);
+            @include _clamp(top, -47, -47, 0);
+            @include _clamp(left, 0, 55, 55);
             @include media(992px) {
               display: none;
             }
           }
         }
         &__title {
-          left: _vw(1085);
-          top: _vw(180);
-          width: _vw(1500);
+          @include _clamp(left, 0, 1085, 1085);
+          @include _clamp(top, 0, 180, 180);
+          @include _clamp(width, 100, 1500, 1500);
           @include media(992px) {
             left: _rem(250);
           }
           h3 {
             margin-bottom: _vw(30);
+            @include _clamp(margin-bottom, 16, 30, 30);
             transform: translate(_vw(-5), _vw(5));
-            letter-spacing: _vw(25.5);
+            @include _clamp(margin-bottom, 0, 25.5, 25.5);
           }
           p {
             text-align: start;
-            padding-left: _vw(230);
+            @include _clamp(padding-left, 16, 230, 230);
             @include media(992px) {
               padding-left: 0;
               text-align: end;
@@ -126,7 +131,7 @@
           }
         }
         &__description {
-          width: _vw(780);
+          @include _clamp(width, 100, 780, 780);
           transform: translateY(_vw(-5));
           @include media(1200px) {
             width: 50%;
@@ -142,7 +147,7 @@
     }
   }
   &__image {
-    width: _vw(2560);
+    @include _clamp(width, 100, 2560, 2560);
     @include media(992px) {
       width: 100%;
     }
@@ -174,12 +179,12 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      width: _vw(389);
-      height: _vw(156);
-      bottom: _vw(-154);
+      @include _clamp(width, 50, 395, 395);
+      @include _clamp(height, 50, 156, 156);
+      @include _clamp(bottom, -154, -154, 0);
       text-align: center;
       img {
-        width: _vw(32);
+        @include _clamp(width, 16, 32, 32);
         transform: translateY(_vw(5));
         object-fit: cover;
       }
@@ -204,7 +209,7 @@
     h3 {
       @include _clamp(font-size, 14, 97, 97);
       font-weight: 700;
-      letter-spacing: _vw(25);
+      @include _clamp(letter-spacing, 0, 25, 25);
       text-shadow: 5px 26px 81px rgba(0, 15, 26, 0.6);
       @include media(992px) {
         text-align: center !important;
@@ -225,7 +230,7 @@
     color: map-get($color, 7);
     @include _clamp(font-size, 12, 29, 29);
     font-family: "Montserrat", sans-serif;
-    line-height: _vw(79);
+    @include _clamp(line-height, calc(1.25 * 12), 79, 79);
     @include media(992px) {
       width: 100% !important;
       color: map-get($color, 6) !important;
